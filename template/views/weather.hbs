@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    {{>navbar}}
+    <!-- main header -->
+    <div class="container-fluid main_header ">
+        <div class="row">
+          <div class="col-md-10 col -12 mx-auto">
+             <div class="main_content">
+                 <form class="temp_form">
+                     
+                    <input type="text" id="cityName" placeholder="Enter your city Name" autocomplete="off">
+                    <input type ="submit" value="search" id="submitBtn">
+                 </form>
+             </div>
+             <div class="tempInformation">
+                 <div class="top_layer">
+                     <p id="day">
+                         Tuesday
+                     </p>
+                     <p id="today_date">13Oct</p>
+                 </div>
+                 <div class="main_layer ">
+                     <p id="city_name">Getout showhere</p>
+                    <div class="middle_layer data_hide">
+                      <p id="temp"><span id="temp_real_val">0</span><sup>C</sup></p>
+                      <p id= "temp_status"><i class="fas fa-cloud"></i></p>
+                    </div>
+                 </div>
+                 
+             </div>
+
+
+          </div></div></div>
+          <!-- footer code -->
+          {{>footer}}
+          <script src="js/main.js"></script>
+          <script>
+const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const d = new Date();
+let month = months[d.getMonth()];
+let day = days[d.getDay()];
+document.getElementById("day").innerHTML = day;
+document.getElementById("today_date").innerHTML = `${d.getDate()}${month}`;
+</script>
+  </body>
+</html>
